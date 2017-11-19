@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chapter 6 Assignment1</title>
+    <script>
+        var exam1 = prompt("what is your grade for the first exam?");
+        var exam2 = prompt("what is your grade for the second exam?");
+        var exam3 = prompt("what is your grade for the third exam?");
+        exam1 = parseInt(exam1);
+        exam2 = parseInt(exam2);
+        exam3 = parseInt(exam3)
+        var average = Math.round((exam1 + exam2 + exam3) / 3);
+        var grade;
+
+        document.write("Your 3 exam scores are: <br>");
+        document.write("Exam 1: " + exam1 + "<br>");
+        document.write("Exam 2: " + exam2 + "<br>");
+        document.write("Exam 3: " + exam3 + "<br>");
+        document.write("Average: " + average + "<br>");
+        
+        if (average > 91 && average <= 100) {
+            grade = "A"
+            document.write("course grade:" + grade + "<br>");
+        } else if (average > 81 && average <= 90) {
+            grade = "B"
+            document.write("course grade:" + grade + "<br>");
+        } else if (average > 71 && average <= 80) {
+            grade = "C"
+            document.write("course grade:" + grade + "<br>");
+        } else if (average > 65 && average < 70) {
+            grade = "D"
+            document.write("course grade:" + grade + "<br>");
+        } else {
+            grade = "F"
+            document.write("course grade:" + grade + "<br>");
+        }
+
+
+        switch (grade) {
+            case "A":
+                document.write("Great job, keep it up ");
+                break;
+            case "B":
+                document.write("Very nice work");
+                break;
+            case "C":
+                document.write("You can do it, keep studying ");
+                break;
+            case "D":
+                document.write("You need some help, see the teacher ");
+                break;
+            default:
+                document.write("Please schedule an appointment with your advisor");
+        }
+    </script>
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: gray
+        }
+    </style>
+</body>
+
+</html>
