@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chapter 6 Assignment 2</title>
+    <script>
+        var vehicle_price = prompt("What the price of the vehicle?");
+        vehicle_price = parseInt(vehicle_price);
+        var down_payment = prompt("What was the down payment?");
+        down_payment = parseInt(down_payment);
+        var intrest_rate = prompt("What is the annual intrest rate?");
+        intrest_rate = parseFloat(intrest_rate);
+        var loan_amount = (vehicle_price - down_payment);
+        var monthly_interest_rate = (intrest_rate / 1200);
+
+
+        function calculate(monthly_interest_rate, i, loan_amount) {
+            var base = Math.pow(1 + monthly_interest_rate, i);
+            var payment = loan_amount * monthly_interest_rate / (1 - (1 / base));
+            return payment;
+        }
+    </script>
+
+    <body>
+        <h1> Loan Calculator </h1>
+        <style>
+            body {
+                background-color: tan;
+            }
+
+            pre {
+                width: 10%;
+                float: left;
+                text-align: left;
+                text-align: center;
+            }
+        </style>
+
+        <script>
+            document.write("Vehicle price: $" + vehicle_price.toFixed(2) + "<br>");
+            document.write("Down payment: $" + down_payment.toFixed(2) + "<br>");
+            document.write("Interest Rate: " + intrest_rate + "%" +"<br>");
+            document.write("Loan Amount: $" + loan_amount.toFixed(2) + "<br>");
+        </script>
+        <pre>
+                <h2># of Months</h2>
+    <script>
+        for (var i = 24; i <= 60; i+=12) {
+            document.write(i + "<br/>")
+        }
+    </script>
+</pre>
+<pre>
+        <h2>Payment / Month</h2>
+<script>
+    for (var j = 24; j <= 60; j += 12) {
+        var monthly_payment = ((loan_amount * monthly_interest_rate) / j);
+        document.write("$" + (calculate(monthly_interest_rate, j, loan_amount).toFixed(2) + "<br/>"));
+    }
+    </script>
+</pre>
+
+    </body>
+</html>
